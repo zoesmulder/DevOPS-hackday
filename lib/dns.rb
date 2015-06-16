@@ -12,7 +12,7 @@ def set_record(dynect_object, record_type, dns_zone, fqdn, value)
     raise("Unknown record type")
   end
   if record.nil?
-    puts "No old record, creating clean"
+    puts "No old record"
     # Record doesn't exist, create:
     # We only handle a records and cnames here:
     dynect_object.post_record( record_type, dns_zone, fqdn, {datatype => value, :ttl => 30})
